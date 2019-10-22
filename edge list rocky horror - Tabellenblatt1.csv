@@ -1,0 +1,27 @@
+from,to,weight
+Frank,Riff Raff,1
+Frank,Magenta,1
+Frank,Columbia,1
+Frank,Brad,2
+Frank,Janet,2
+Frank,Rocky,2
+Riff Raff,Magenta,3
+Riff Raff,Frank,2
+Magenta,Riff Raff,3
+Magenta,Frank,2
+Magenta,Columbia,2
+Columbia,Magenta,3
+Columbia,Frank,3
+Columbia,Eddie,3
+Eddie,Columbia,3
+Dr. Scott,Eddie,3
+Dr. Scott,Brad,2
+Brad,Janet,2
+Brad,Frank,1
+Brad,Dr. Scott,2
+Janet,Brad,2
+Janet,Dr. Scott,1
+Janet,Frank,1
+Janet,Rocky,3
+Rocky,Janet,3
+Rocky,Frank,1
