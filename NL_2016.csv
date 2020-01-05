@@ -1,0 +1,25 @@
+id,name,sex,age,study,category,country,type
+AsPr,Associated Press,99,99,99,1,1,2
+LAT,staff of Los Angeles Times,99,99,99,2,1,2
+LLA,Leonora LaPeter Anton,2,55,1,3,1,1
+AnCo,Anthony Cormier,1,41,Creative Writing,3,1,1
+MiBr,Michael Braga,1,59,Economics,3,1,1
+TCM,T. Christian Miller,1,50,English & French,4,1,1
+KeAr,Ken Armstrong,1,57,Writing,4,1,1
+MiLa,Michael LaForgia,1,36,English,5,1,1
+CaFi,Cara Fitzpatrick,2,39,1,5,1,1
+LiGa,Lisa Gartner,2,32,1,5,1,1
+WAPO,staff of Washington Post,99,99,99,6,99,2
+AJR,Alissa J. Rubin,2,60,Renaissance studies,7,1,1
+KaSc,Kathryn Schulz,2,46,4,8,1,1
+FaSt,Farah Stockman,2,45,Literature ,9,1,1
+EmNu,Emily Nussbaum,2,53,Poetry,10,1,1
+JoHa,John Hackworth,1,72,1,11,1,1
+BrGl,Brian Gleason,1,55,Business Communication,11,,1
+JaOh,Jack Ohman,1,59,99,12,1,1
+MaLi,Mauricio Lima,1,44,Communications ,13,Brazil,1
+SePo,Sergey Ponomarev,1,39,Journalism & Public Relations,13,Russia,1
+TyHi,Tyler Hicks,1,50,1,13,Brazil,1
+DaEt,Daniel Etter,1,39,2,13,Germany,1
+PHRE,photographers from Reuters,,99,99,13,99,2
+JeRi,Jessica Rinaldi,2,40,1,14,,1
