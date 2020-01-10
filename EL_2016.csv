@@ -7,7 +7,7 @@ LLA,MiLa,1
 LLA,CaFi,1
 LLA,LiGa,1
 LLA,EmNu,1
-LLA,PHRE,1
+LLA,RE,1
 AnCo,AsPr,2
 AnCo,MiBra,2
 AnCo,TCM,1
@@ -23,7 +23,7 @@ MiBra,KeAr,1
 MiBra,MiLa,1
 MiBra,CaFi,1
 MiBra,LiGa,1
-MiBra,PHRE,1
+MiBra,RE,1
 TCM,KeAr,2
 TCM,MiLa,1
 TCM,CaFi,1
@@ -31,7 +31,7 @@ TCM,LiGa,1
 TCM,WAPO,2
 TCM,AJR,2
 TCM,EmNu,1
-TCM,PHRE,1
+TCM,RE,1
 KeAr,MiLa,1
 KeAr,CaFi,1
 KeAr,LiGa,1
@@ -39,7 +39,7 @@ KeAr,WAPO,2
 KeAr,EmNu,1
 MiLa,CaFi,3
 MiLa,LiGa,3
-MiLa,PHRE,2
+MiLa,RE,2
 CaFi,LiGa,3
 CaFi,KaSc,1
 CaFi,FaSt,2
@@ -58,7 +58,7 @@ WAPO,MaLi,2
 WAPO,SePo,2
 WAPO,TyHi,2
 WAPO,DaEt,2
-WAPO,PHRE,2
+WAPO,RE,2
 WAPO,JeRi,2
 AJR,MaLi,3
 AJR,SePo,3
@@ -70,7 +70,7 @@ KaSc,EmNu,3
 FaSt,EmNu,1
 FaSt,JaOh,1
 FaSt,TyHi,1
-FaSt,PHRE,2
+FaSt,RE,2
 FaSt,JeRi,3
 JoHa,BrGl,3
 JaOh,AsPr,2
@@ -80,14 +80,14 @@ MaLi,DaEt,3
 SePo,AsPr,3
 SePo,TyHi,3
 SePo,DaEt,3
-SePo,PHRE,2
+SePo,RE,2
 TyHi,AsPr,2
 TyHi,DaEt,3
-TyHi,PHRE,2
+TyHi,RE,2
 DaEt,AsPr,2
-DaEt,PHRE,2
-PHRE,AsPr,1
-PHRE,JeRi,2
+DaEt,RE,2
+RE,AsPr,1
+RE,JeRi,2
 LAT,TCM,3
 LAT,CaFi,2
 LAT,WAPO,2
