@@ -1,0 +1,84 @@
+---
+title: "Pretest"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+summary(cars)
+```
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+```{r Pakete installieren}
+library(igraph)
+library(igraphdata)
+library(knitr)
+library(rmarkdown)
+```
+
+```{r Graph}
+
+# liest die Edgelist als "el" ein
+el <- read.csv("https://raw.githubusercontent.com/franziska-anson/Tutorium/master/EL_2016.csv", header=T, as.is=T, sep = ",")
+
+nodes <- read.csv("https://raw.githubusercontent.com/franziska-anson/Tutorium/master/NL_2016.csv", header=T, as.is=T)
+
+# zeigt die ersten sechs Zeilen der Nodelist und die Attribute der Nodes an
+head(nodes)
+
+# Zwischenschritt verbindet die Edge- und Nodelist zu einer Matrix
+pu_matrix <- as.matrix(el)
+
+# generiert ein igraph-Objekt (dataframe) aus der Matrix, das gerichtet ist (directed = FALSE)
+pu <- graph_from_data_frame(d=pu_matrix, vertices=nodes, directed=FALSE)
+
+# ruft unser neues igraph-Objekt auf
+pu
+
+# generiert die Standard-Visualisierung des Netzwerks
+plot(pu,
+layout=layout_with_kk,
+edge.curved=.1,
+vertex.color="purple",
+vertex.frame.color="purple",
+vertex.size=15,
+vertex.label.color="black",
+vertex.label.cex=.6,
+vertex.label.family="Calibri",
+main="Beziehungen der Pulitzer Preisträger 2016",
+edge.arrow.size=.1,
+edge.width=1.5,
+)
+```
+
+```{r Shapes laden}
+shapes <- setdiff(shapes(), "")
+V(pu)[V(pu)$type =="1"]$shape <- "circle"          
+V(pu)[V(pu)$type =="2"]$shape <- "csquare"
+```
+
+```{r Visualisierung II}
+shapes <- setdiff(shapes(), "")
+
+plot(pu,
+layout=layout_with_kk,
+edge.curved=.1,
+vertex.color="purple",
+vertex.frame.color="purple",
+vertex.size=15,
+vertex.label.color="black",
+vertex.label.cex=.6,
+vertex.label.family="Calibri",
+main="Beziehungen der Pulitzer Preisträger 2016",
+edge.arrow.size=.1,
+edge.width=1.5)
+plot(pu, vertex.shapes=shapes)
+```
+
