@@ -1,5 +1,3 @@
-# Datensatz Semesterverbund CRPR2 #
-Codebuch Stand 2020-03-10   
 
 ## Inhalt
 - Edges.csv (Edgelist)
@@ -58,7 +56,6 @@ Bitte geben Sie ihr Geschlecht an:
 Anzahl der gewonnen Pulitzerpreise von 2014-2019  
   
 **nationality**    
-Welche Augenfarbe?    
 1 = USA   
 2 = Germany,   
 3 = other   
