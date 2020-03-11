@@ -1,4 +1,4 @@
-ID,Name,type,sex,age,study,prices,nationality
+id,name,type,sex,age,study,prices,nationality
 SFS,South Florida Sun Sentinel,2,99,99,99,1,1
 PPG,Pittsburgh Post-Gazette,2,99,99,99,1,1
 MaHa,Matt Hamilton,1,1,27,1,1,1
