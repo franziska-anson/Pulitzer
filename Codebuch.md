@@ -16,7 +16,7 @@ Es wurden der Typ, das Geschlecht, Alter, die Studienrichtung, die Anzahl der ge
 (eindeutige Codierung des Knoten)   
 
 **weight**  
-Beziehungsstärke aufgrund der Nennung in den Fragen)  
+Beziehungsstärke 
 3 = Kollegen in einer Organisation  
 2 = Kooperation
 1 = Twitter-Follower  
@@ -33,8 +33,7 @@ Identische ID wie aus der edgelist zur Identifikation der Knoten.
 2 = Institution 
 
 
-**sex**    
-Bitte geben Sie ihr Geschlecht an:  
+**sex**      
 1 = männlich   
 2 = weiblich
 3 = divers
@@ -57,7 +56,7 @@ Anzahl der gewonnen Pulitzer-Preise von 2014-2019
   
 **nationality**    
 1 = USA   
-2 = Germany,   
+2 = Germany
 3 = other   
 
 
