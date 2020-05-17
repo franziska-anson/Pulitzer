@@ -7,7 +7,7 @@
 ## Ursprung und Datenerhebung
 
 Das Netzwerk ist ein *ungerichtetes two-mode Akteursnetzwerk*. 
-
+Es wurden der Typ, das Geschlecht, Alter, die Studienrichtung, die Anzahl der gewonnenen Pulitzer-Preise in den Jahren 2014-2019 und die Nationalität erhoben.
 
 
 # EDGE-Attribute
@@ -53,7 +53,7 @@ Bitte geben Sie ihr Geschlecht an:
 4 = other
   
 **prices**    
-Anzahl der gewonnen Pulitzerpreise von 2014-2019  
+Anzahl der gewonnen Pulitzer-Preise von 2014-2019  
   
 **nationality**    
 1 = USA   
