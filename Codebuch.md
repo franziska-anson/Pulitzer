@@ -12,54 +12,54 @@ Es wurden der Typ, das Geschlecht, Alter, die Studienrichtung, die Anzahl der ge
 
 # EDGE-Attribute
 
-**id**  
+**id** <br>  
 (eindeutige Codierung des Knoten)   
 
-**weight**  
-Beziehungsstärke 
-3 = Kollegen in einer Organisation  
-2 = Kooperation
-1 = Twitter-Follower  
+**weight**  <br> 
+Beziehungsstärke <br>
+3 = Kollegen in einer Organisation  <br>
+2 = Kooperation <br>
+1 = Twitter-Follower <br>  
 
 
 # NODE-Attribute  
   
-**id**  
+**id**  <br> 
 Identische ID wie aus der edgelist zur Identifikation der Knoten. 
 
 
-**type**
-1 = Person
-2 = Institution 
+**type** <br> 
+1 = Person <br>
+2 = Institution <br> 
 
 
-**sex**      
-1 = männlich   
-2 = weiblich
-3 = divers
+**sex**  <br>     
+1 = männlich   <br>
+2 = weiblich <br>
+3 = divers <br>
   
-**age***    
-1 = unter 30 Jahre
-2 = 30-39 Jahre 
-3 = 40-49 Jahre
-4 = 50-59 Jahre
-5 = über 60 Jahre
+**age** <br>    
+1 = unter 30 Jahre <br>
+2 = 30-39 Jahre <br>
+3 = 40-49 Jahre <br>
+4 = 50-59 Jahre <br>
+5 = über 60 Jahre <br>
 
-**study**    
-1 = journalism and writing
-2 = politics
-3 = history
-4 = other
+**study** <br>     
+1 = journalism and writing <br>
+2 = politics <br>
+3 = history <br>
+4 = other <br>
   
-**prices**    
+**prices**<br>    
 Anzahl der gewonnen Pulitzer-Preise von 2014-2019  
   
-**nationality**    
-1 = USA   
-2 = Germany
-3 = other   
+**nationality** <br>    
+1 = USA   <br>
+2 = Germany<br>
+3 = other   <br>
 
 **twitter** <br>
 1 = ja <br>
-2 = nein
+2 = nein <br> 
 ##
