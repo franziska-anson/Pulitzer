@@ -60,6 +60,6 @@ Anzahl der gewonnen Pulitzer-Preise von 2014-2019
 3 = other   
 
 **twitter**
-1 = ja
+1 = ja <br>
 2 = nein
 ##
