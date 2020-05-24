@@ -59,7 +59,7 @@ Anzahl der gewonnen Pulitzer-Preise von 2014-2019
 2 = Germany
 3 = other   
 
-**twitter**
+**twitter** <br>
 1 = ja <br>
 2 = nein
 ##
