@@ -1,0 +1,18 @@
+id,name,sex,age,category,nationality,study,type
+PaC,The Post and Courier,99,99,1,1,99,2
+ST,The Seattle Times,99,99,2,1,99,2
+ErLi,Eric Lipton,1,4,3,1,3,1
+WSJ,Wall Street Journal,99,99,3,1,99,2
+ZaMi,Zachary R. Mider,1,99,4,1,4,1
+RoKu,Rob Kuznia,1,99,5,1,99,1
+ReKi,Rebecca Kimitch,2,99,5,1,4,1
+FrSu,Frank Suraci,1,99,5,1,99,1
+CaLe,Carol Leonnig,2,4,6,1,99,1
+NYT,The New York Times,99,99,7,1,99,2
+DiMa,Diana Marcum,2,4,8,1,99,1
+LiFa,Lisa Falkenberg,2,3,9,1,1,1
+MaMc,Mary McNamara,2,4,10,1,1,1
+KaKi,Kathleen Kingsbury,2,99,11,1,1,1
+AdZy,Adam Zyglis,1,2,12,1,4,1
+StLPD,St.Louis Post-Dispatch,99,99,13,1,99,2
+DaBe,Daniel Berehulak,1,3,14,3,3,1
