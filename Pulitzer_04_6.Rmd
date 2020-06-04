@@ -1,0 +1,466 @@
+---
+title: "Pulitzer"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Pakete installieren}
+library(igraph)
+library(igraphdata)
+library(knitr)
+library(rmarkdown)
+```
+
+```{r Edgelist}
+el <- read.csv("https://raw.githubusercontent.com/franziska-anson/Pulitzer/master/EL.csv", header=T, as.is=T, sep = ",")
+```
+
+```{r Nodelist}
+nodes <- read.csv("https://raw.githubusercontent.com/franziska-anson/Pulitzer/master/NL.csv", header=T, as.is=T,)
+
+head(nodes)
+```
+
+```{r Matrix}
+pu_matrix <- as.matrix(el)
+```
+
+```{r Graph}
+# generiert ein igraph-Objekt (dataframe) aus der Matrix, das gerichtet ist (directed = FALSE)
+pu <- graph_from_data_frame(d=pu_matrix, vertices=nodes, directed=FALSE)
+
+V(pu)[V(pu)$type == 1]$shape <- "circle"
+
+V(pu)[V(pu)$type == 2]$shape <- "square"
+```
+
+```{r Farben der Organisationen und Personen zuweisen}
+V(pu)[V(pu)$type == 1]$color <- "grey"
+
+V(pu)[V(pu)$type == 2]$color <- "red"
+
+```
+
+```{r Geschlechter Farbe zuweisen}
+V(pu)[V(pu)$sex == 1]$color <- "blue"
+V(pu)[V(pu)$sex == 2]$color <- "pink"
+
+V(pu)$vertex.label.color="black"
+V(pu)$label.font.family="Arial"
+E(pu)$color="black"
+E(pu)$width <- E(pu)$weight
+```
+
+```{r Gesamtnetzwerk}
+par(mar=c(0,0,0,0)) 
+
+plot(pu,
+     asp=0,
+     vertex.size=8,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108")
+```
+
+```{r Twitter Netzwerk}
+# Alle, die kein Twitter haben oder keine Twitter Beziehungen, sind gelöscht --> in Forschungsbericht beachten!
+pu_twitter <- subgraph.edges(pu, E(pu)[weight ==1])
+par(mar=c(0,0,0,0)) 
+
+plot(pu_twitter, 
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108"
+     )
+
+pu_twitter2 <- delete.vertices(pu_twitter, degree(pu_twitter)==0)
+plot(pu_twitter2, 
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     main="Twitter ohne unverbundene"
+     )
+
+```
+
+```{r Kollegen Netzwerk}
+
+#pu_col <- delete_edges(pu, E(pu)[weight !=3])
+#pu_col <- delete_vertices(pu_col, V(pu_col)$type==2)
+
+#nur tatsächliche Kollegenbeziehungen werden angezeigt, Einzelgänger nicht --> im Forschungsbericht dran denken
+pu_col <- subgraph.edges(pu, E(pu)[weight ==3])
+par(mar=c(0,0,0,0)) 
+
+plot(pu_col,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=108",
+     vertex.label.color="black")
+```
+
+```{r Netzwerk der Leute, die kein Twitter haben}
+pu_ktw <- delete.vertices(pu, V(pu)[twitter == 1]) #Lösche alle Knoten, die Twitter haben
+par(mar=c(0,0,0,0)) 
+
+plot(pu_ktw,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=108",
+     vertex.label.color="black")
+
+```
+
+
+```{r Altersnetzwerk}
+pu_alter <- pu
+V(pu_alter)[V(pu_alter)$age == 1]$color <- "grey20"
+V(pu_alter)[V(pu_alter)$age == 2]$color <- "grey40" 
+V(pu_alter)[V(pu_alter)$age == 3]$color <- "grey60"
+V(pu_alter)[V(pu_alter)$age == 4]$color <- "grey70"
+V(pu_alter)[V(pu_alter)$age == 5]$color <- "grey80"
+
+pu_alter <- delete_vertices(pu_alter, V(pu_alter)$type==2)
+pu_alter <- delete_vertices(pu_alter, V(pu_alter)$age==99)
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_alter,
+     asp=0,
+     vertex.size=6,
+     sub="n=108",
+     layout=layout_with_fr,
+     vertex.label.color="black")
+
+```
+
+```{r Männer Netzwerk}
+pu_male <- pu
+pu_male <- delete_vertices(pu_male, V(pu_male)$sex==2)
+pu_male <- delete_vertices(pu_male, V(pu_male)$type==2)
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_male,
+   asp=0,
+   vertex.label.color="black",
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   sub="n=58")
+```
+
+```{r Frauen Netzwerk}
+pu_fem <- pu
+pu_fem <- delete_vertices(pu_fem, V(pu_fem)$sex==1)
+pu_fem <- delete_vertices(pu_fem, V(pu_fem)$type==2)
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_fem,
+   asp=0,
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   vertex.label.color="black",
+   sub="n=27")
+```
+
+```{r Länder Netzwerk, fig.height=600, fig.width=1200}
+pu_country <- pu
+pu_country <- delete_vertices(pu, V(pu)$type==2)
+
+V(pu)$nationality
+
+# Hier die Farbzuweisung für die einzelnen Länder. Amerikaner und unbekannt sind grau, deutsche Gewinner rot und Gewinner mit anderen Nationalitäten sind gelb markiert.
+V(pu_country)[V(pu_country)$nationality == 1]$color <- "grey20"
+V(pu_country)[V(pu_country)$nationality == 2]$color <- "red"
+V(pu_country)[V(pu_country)$nationality == 3]$color <- "yellow"
+V(pu_country)[V(pu_country)$nationality == 99]$color <- "grey20"
+
+plot(pu_country,
+     main="Ländernetzwerk",
+     layout=layout_with_graphopt,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6)
+```
+
+```{r Mehrfachpreisträger}
+
+pu_pu <- delete.vertices(pu, V(pu)[prices == 1])
+
+
+plot(pu_pu,
+     vertex.label.color="black",
+     vertex.size=12,
+     main="Mehrfachpreisträger")
+
+```
+
+```{r Ego-Netzwerk Reuters}
+
+#pu <- pu_re
+
+pu_re <- make_ego_graph(pu, order = 1, nodes= V(pu)$name=="Reuters", mode="all")
+pu_re <- pu_re[[1]]
+par(mar=c(0,0,0,0)) 
+
+plot(pu_re,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+```
+
+```{r Ego Netzwerk New York Times}
+
+#pu <- pu_nyt
+
+pu_nyt <- make_ego_graph(pu, order = 1, nodes= V(pu)$name=="New York Times", mode="all")
+pu_nyt <- pu_nyt[[1]]
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_nyt,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+```
+
+```{r Alle Netzwerke nebeneinander visualisiert}
+
+par(mfrow=c(3,4), mar=c(0,0,0,0))
+plot(pu,
+     asp=0,
+     vertex.size=8,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108")
+plot(pu_twitter, 
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108"
+     )
+plot(pu_col,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=108",
+     vertex.label.color="black")
+plot(pu_alter,
+     asp=0,
+     vertex.size=6,
+     sub="n=108",
+     layout=layout_with_fr,
+     vertex.label.color="black")
+plot(pu_male,
+   asp=0,
+   vertex.label.color="black",
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   sub="n=58")
+plot(pu_fem,
+   asp=0,
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   vertex.label.color="black",
+   sub="n=27")
+plot(pu_country,
+     main="Ländernetzwerk",
+     layout=layout_with_graphopt,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6)
+plot(pu_pu,
+     vertex.label.color="black",
+     vertex.size=12,
+     main="Mehrfachpreisträger")
+plot(pu_re,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+plot(pu_nyt,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+par(mfrow=c(1,1))
+```
+
+```{r auf der Suche nach einem Journalisten mit dem Alternetzwerk}
+list.vertex.attributes(pu)
+ego_size(pu_alter)
+degree(pu_alter)
+#Am meisten Verbindungen hat der WaPo Journalist David Fahrenthold (Konten Nummer 17), am wenigsten haben Art Cullen (Nummer 21) und Brian Gleason (Nummer 50)
+
+#Nun die entsprechenden Ego-Netzwerke
+
+pu_DaFa <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "David Fahrenthold", mode="all")
+pu_DaFa <- pu_DaFa[[1]]
+V(pu_DaFa)[V(pu_DaFa)$name == "David Fahrenthold"]$color <- "yellow"
+plot(pu_DaFa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk David Fahrenthold, erster Ordnung"
+     )
+
+pu_ArCu <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "Art Cullen", mode="all")
+pu_ArCu <- pu_ArCu[[1]]
+V(pu_ArCu)[V(pu_ArCu)$name == "Art Cullen"]$color <- "yellow"
+plot(pu_ArCu,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Art Cullen, erster Ordnung"
+     )
+pu_BrGl <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "Brian Gleason", mode="all")
+pu_BrGl <- pu_BrGl[[1]]
+V(pu_BrGl)[V(pu_BrGl)$name == "Brian Gleason"]$color <- "yellow"
+plot(pu_BrGl,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Brian Gleason, erster Ordnung"
+     )
+#Alle Netzwerke nebeneinander
+
+par(mfrow=c(1,3), mar=c(1,0,0,1))
+plot(pu_DaFa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk David Fahrenthold, erster Ordnung"
+     )
+plot(pu_ArCu,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Art Cullen, erster Ordnung"
+     )
+plot(pu_BrGl,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Brian Gleason, erster Ordnung"
+     )
+par(mfrow=c(1,1))
+```
+
+```{r größter und kleinster Degree bei den Frauen}
+ego_size(pu_fem)
+degree(pu_fem)
+
+pu_JoKa <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "Jodi Kantor", mode="all")
+pu_JoKa <- pu_JoKa[[1]]
+V(pu_JoKa)[V(pu_JoKa)$name == "Jodi Kantor"]$color <- "yellow"
+plot(pu_JoKa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Jodi Kantor, erster Ordnung"
+     )
+#Marina Walker 
+
+pu_MaWa <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "Marina Walker", mode="all")
+pu_MaWa <- pu_MaWa[[1]]
+V(pu_MaWa)[V(pu_MaWa)$name == "Marina Walker"]$color <- "yellow"
+plot(pu_MaWa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Marina Walker, erster Ordnung"
+     )
+#Alle Netzwerke nebeinander
+
+par(mfrow=c(1,2), mar=c(0,0,0,0))
+plot(pu_JoKa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Jodi Kantor, erster Ordnung"
+     )
+plot(pu_MaWa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     main="Ego-Netzwerk Marina Walker, erster Ordnung"
+     )
+par(mfrow=c(1,1))
+
+
+```
+
+
+```{r Die Dichte aller Netzwerke von oben nach unten}
+edge_density(pu)
+edge_density(pu_twitter)
+edge_density(pu_col)
+edge_density(pu_alter)
+edge_density(pu_male)
+edge_density(pu_fem)
+edge_density(pu_country)
+edge_density(pu_pu)
+edge_density(pu_re)
+edge_density(pu_nyt)
+```
+
+```{r Pfadistanz}
+diameter(pu, weights = NA)
+farthest_vertices(pu)
+
+#und so weiter für jedes Netzwerk
+diameter(pu_twitter, weights = NA)
+farthest_vertices(pu_twitter)
+
+diameter(pu_col, weights = NA)
+farthest_vertices(pu_col)
+
+diameter(pu_alter, weights = NA)
+farthest_vertices(pu_alter)
+
+diameter(pu_male, weights = NA)
+farthest_vertices(pu_male)
+
+diameter(pu_fem, weights = NA)
+farthest_vertices(pu_fem)
+
+diameter(pu_country, weights = NA)
+farthest_vertices(pu_country)
+
+diameter(pu_pu, weights = NA)
+farthest_vertices(pu_pu)
+
+diameter(pu_re, weights = NA)
+farthest_vertices(pu_re)
+
+diameter(pu_nyt, weights = NA)
+farthest_vertices(pu_nyt)
+```
+
+
+#Notizen: 
+-Das Ego-Netzwerk eines zweifach Gewinners (evtl. den Knoten mit den den höchsten Degrees oder so)
+-Noch die Kantenstärken im Gesamtnetzwerk und den anderen Netzwerken sichtbar machen (plot(edge.size=weighted oder E(pu)$width <- E(pu)$weight))
+
+
+
+
+
