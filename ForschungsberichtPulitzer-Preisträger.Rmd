@@ -1,0 +1,598 @@
+---
+title: "226305 Forschungsbericht Pulitzer-Preisträger"
+author: "Franziska Anson, Maria Fischer, Eva-Maria Schauer, Ingrid Bonfert, Jan Probst, Nico Ditter | fa021@hdm-stuttgart.de, mf158@hdm-stuttgart.de, es108@hdm-stuttgart.de, ib040@hdm-stuttgart.de, jp089@hdm-stuttgart.de, nd047@hdm-stuttgart.de"
+date: "Wintersemester 19/20 und Sommersemester 20"
+output:
+  html_document: 
+    number_sections: yes
+    toc: yes
+  word_document:
+    toc: yes
+    toc_depth: '3'
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+subtitle: Analyse des Sozialkapitals der Pulitzer-Preisträger von 2014 bis 2019
+editor_options: 
+  chunk_output_type: inline
+---
+__Abstract und Keywords__
+Der Forschungsbericht untersucht die Beziehungsnetzwerke und somit das Sozialkapital der Pulitzer-Preisträger der Jahre 2014 bis 2019. Sowohl Quantität als auch Qualität der Beziehungen werden untersucht. Aus Teilnetzwerken ergibt sich, dass der durchschnittliche Pulitzer-Gewinner männlich, amerikanisch und gut vernetzt ist. Eine gute Vernetzung mit anderen Medienhäusern und Journalisten scheint für einen Pulitzer-Preis wichtig zu sein, dennoch gibt es auch schlechter vernetzte Außenseiter, die den Preis gewinnen.
+
+Keywords: Netzwerkanalyse, Teilnetzwerke, Cliquen, Cluster, Pulitzer
+
+In diesem Forschungsbericht wird aus Gründen der besseren Lesbarkeit das generische Maskulinum verwendet.
+
+# Einleitung, Motivation und Forschungsfrage
+In diesem Forschungsprojekt wurden die Beziehungen der Pulitzer-Preisträger von 2014 bis 2019 anhand von Netzwerken untersucht. Die genaue Forschungsfrage hierbei lautete:
+
+__Wie sieht die Vorgeschichte und das Sozialkapital der Pulitzer-Preisträger von 2014 bis 2019 aus?__
+
+## Motivation
+Dem Pulitzer-Preis kommt als wohl renommiertesten und bekanntesten Journalisten- und Medienpreis eine besondere Bedeutung zu. Er wird jährlich von der Pulitzer-Journalisten-Schule der New Yorker Columbia University vergeben. Je nach Kategorie wird das Preisgeld auf knapp 15.000 US Dollar dotiert. 
+Im Fokus stand hierbei, wie die Gewinner dieser sechs Jahre untereinander vernetzt sind, wer sich untereinander kennt oder doch eher Einzelgänger ist. Dabei kam die Frage auf, welche Rolle deren Beziehungen für ihren Erfolg spielen, ob es hierfür wohl auch ausschlaggebende Cluster gibt oder auch Journalisten mit interessanten Ego-Netzwerken.
+Der Pulitzer-Preis ist ein US-amerikanischer Preis: Gewinnen deshalb also häufiger Journalisten der Vereinigten Staaten? Doch nicht nur Personen wurden als Preisträger untersucht: Auch Institutionen, welche den Pulitzer-Preis gewonnen haben, wurden auf ihre Verbindungen und Kollaborationen erforscht, weshalb letztlich ein ungerichtetes two-mode Gesamtnetzwerk mit Personen und Medienhäusern als Knoten entstanden ist.
+
+
+## Definition und Operationalisierung der Forschungsfrage
+Bereits Pierre Bourdieu (1983) definierte soziales Kapital als Macht, die aus der Zugehörigkeit einer Gruppe entsteht. Bei dieser Definition ist anzumerken, dass Sozialkapital eine negative Konnotation hat, wird hierbei die eigene Leistung des Individuums nicht vornehmlich für Erfolg verantwortlich gemacht, sondern die Gruppenzugehörigkeit, welche teils herkunftsbedingt ist und so von den Individuen nicht zu ändern. 
+
+Dieser doch eher negativ behafteten Definition steht die Definition von Robert Putnam (1993) gegenüber: Sozialkapital entsteht durch das gegenseitige Vertrauen und ermöglicht somit ein Gemeinschaftsleben. Die Reziprozität ist hierbei von Bedeutung: Nur wenn ein Geschenk, eine Gefälligkeit oder Anerkennung erwidert werden, bleibt die Bindung zwischen den Individuen vorhanden und verstärkt sich. In diesem Netzwerk liegt der Fokus auf vorhandene Verbindungen und Interessen, von welcher Person diese initiiert wurden, ist nicht ersichtlich. Doch für das Sozialkapital der einzelnen Individuen ist es unerheblich, wodurch eine Kooperation entstand, das Resultat wird davon nicht beeinflusst. Sozialkapital ermöglicht es Individuen und Institutionen, sowohl nach Bourdieu als auch nach Putnam, das eigene Vorankommen zu ermöglichen und zu fördern. Findet sich hierbei unter Pulitzer-Gewinnern ein dichtes Netz an Beziehungen; Sozialkapital, welches ausschlaggebend war, um einen Preis zu gewinnen? 
+
+Um das Sozialkapital der verschiedenen Gewinner zu vergleichen, musste dieses operationalisiert werden. Neben der Quantität der Beziehungen war hierbei auch die Qualität entscheidend. So wurden die Beziehungen, welche die Journalisten über die Spanne ihres gesamten Lebens geknüpft hatten, untersucht und nicht nur deren Beziehungen im ausschlaggebenden Jahr des Gewinns oder des Untersuchungszeitraums 2014-2019. Bei der Qualität der Beziehungen sind drei verschiedene Arten definiert, welche unter Punkt 3 definiert werden und auch im Codebuch der Forschung zu überblicken sind.
+
+# Forschungsstand
+
+Die bestehende Hypothese zu Beginn der Forschung war, dass besonders erfahrene, ältere und bekannte Journalisten die meisten Beziehungen aufzeigen. In der bestehenden Forschung sticht eine ähnliche Studie heraus.
+
+Robert Mertons’ (Lee & Volz, 2012) Theorie des kumulativen Vorteils “cumulative advantage” zeigt, wie stark das Sozialkapital eines Journalisten mit der Wahrscheinlichkeit zusammenhängt, ob er einen Pulitzer-Preis gewinnt. Die anfänglichen Statusvorteile, die Journalisten erwerben, führen zu größeren Chancen für einen beruflichen Aufstieg. In der Studie wurde die Wirkung von individuellen und institutionellen Faktoren auf die Wahrscheinlichkeit des Erfolgs in der Berichterstattung betrachtet, was allgemein als Zeichen einer Ultra-Elite in der journalistischen Schichtung angesehen wird. Dabei wurde eine Stichprobe von 814 Pulitzer-Gewinnern analysiert, wobei unter anderem klar wurde, dass Muster-Pulitzer-Preisträger eher männliche Ivy-League-Absolventen sind. Diese anfänglichen Vorteile verbessern ihre Chancen, überhaupt zu Top-Nachrichtenorganisationen zu gehören. Die Auswahl durch diese Nachrichtenorganisationen erhöht überproportional ihre Wahrscheinlichkeit, einen Pulitzer-Preis zu gewinnen. Der Prozess dieser Vorteilsakkumulation im Journalismus betont die soziale Schichtung in der Gesellschaft insgesamt.
+
+# Datenerhebung
+
+## Codebuch: Node- und Edgelist
+Insgesamt haben 108 Personen oder Institutionen in den letzten sechs Jahren einen Pulitzer-Preis gewonnen. Davon sind 59 Gewinner männlich, 26 weiblich und 23 Preisträger sind Institutionen und deren Mitarbeiter. Zunächst wurden deren IDs und Namen erfasst. Bei Personen wurden jeweils die ersten beiden Buchstaben des Vor- und Nachnamens zu einer ID zusammengefügt (Beispiel: Eli Saslow wurde zu ElSa). Bei den Institutionen wurden die jeweiligen Anfangsbuchstaben ohne Artikel als ID codiert (Beispiel: The Wall Street Journal wurde zu WSJ). Im Anschluss wurden folgende Attribute definiert: Welcher Typ sind sie? Eine *Institution* (2) oder eine *Person* (1)? Ist die Person *männlich* (1), *weiblich* (2) oder *divers* (3)? Außerdem wurden verschiedene Altersspannen kategorisiert: (1) für *unter 30*, (2) für *30-39*, (3) für *40-49*, (4) für  *50-59* und (5) für *über 60*. Des Weiteren war es relevant, welche Richtungen die Preisträger studierten. Nach einer Recherche, wurde wie folgt kodiert: (1) *Journalism / Writing*, (2) *Politics*, (3) *History* und (4) für *alle weiteren Studiengänge*. Das Attribut *prices* gibt Auskunft darüber, wie viele Preise der Gewinner bereits während der letzten sechs Jahre gewonnen hat. Für das Attribut *nationality* wurde zwischen den *USA* (1), *Deutschland* (2) und *allen weiteren Staaten* (3) unterschieden, da sich bei der Recherche ergab, dass der Großteil der Gewinner amerikanischer Nationalität ist. Jedoch ist es für ein deutsches Forschungsteam auch relevant, welche Preisträger aus Deutschland vertreten sind. Mit dem Attribut twitter wurde festgehalten, ob die Person oder Institution auf Twitter einen Account hat (1) oder nicht (2). Bei den Institutionen wurden die Attribute *sex*, *age*, *study* und *nationality* mit 99 codiert. 
+
+Die Edgelist ist auf github (https://github.com/franziska-anson/Pulitzer) einsehbar. Hierbei wurden die Beziehungen aller Pulitzer-Preisträger der letzten sechs Jahre untereinander analysiert. Das Attribut *weight* wurde dabei wie folgt bestimmt: (1) Die Preisträger folgen sich auf Twitter. Zur Vereinfachung wurde auch eine einseitige Twitter-Beziehung anerkannt. Denn obgleich die Beziehung nicht notwendigerweise reziprok ist, besteht ein Interesse zumindest einerseits. Bei Beziehungsstärke (2) hatten die Preisträger im Verlauf ihrer Karriere mindestens eine Kooperation (bspw. gemeinsame Beiträge, Interviews, Events, Erwähnungen). Bei weight (3) waren oder sind die Preisträger Kollegen derselben Institution, beziehungsweise arbeitete eine Person für eine Institution. 
+
+## Datenerhebung
+Auf der offiziellen Pulitzer-Webseite sind die Namen aller jährlichen Gewinner aufgelistet, was die Hauptquelle für diese Arbeit darstellt. 
+Um die Art der Beziehungen untereinander herauszufinden, war es notwendig, über die Online-Recherche bei Google und Google Scholar jegliche Informationen über die Preisträger ausfindig zu machen. Dies nahm äußerst viel Zeit in Anspruch, da nicht alle Daten sofort und vollständig verfügbar waren. Oft waren diese über soziale Netzwerke wie LinkedIn oder verschiedene Autorenseiten bei den Arbeitgebern vorhanden. Auch die freie Enzyklopädie Wikipedia konnte genutzt werden, jedoch hat bei Weitem nicht jeder Preisträger eine Eintragung. Teilweise mussten Journalisten direkt kontaktiert werden, um die notwendigen Informationen zu erhalten. Nicht immer kam eine Rückmeldung, weshalb teils der Wert “99” eingesetzt wurde, da die Information nicht ausfindig gemacht werden konnte. 
+Da das Team aus sechs Mitgliedern besteht, war jeder zunächst für die Vervollständigung der Node- und Edgelist eines Jahres zuständig. So erfasste jeder im Wintersemester 2019/20 die Daten seines zugeteilten Jahres (2014-2019) individuell und führte einen Pretest durch. Auf dieser Basis entstand dann die Nodelist, welche auf Github unter NL.csv zu finden ist. 
+
+Die Erfassung der Beziehungen unter allen Gewinnern bereitete den größten Aufwand. Diese Daten wurden in den Semesterferien zwischen dem Wintersemester 2019/20 und dem Sommersemester 2020 erfasst. Insgesamt gab es 5810 mögliche Beziehungen, welche recherchiert werden mussten. Journalisten, die nur über die Beziehungsstärke 1 eine Verbindung zueinander hatten, waren alle über Twitter zu finden. Die Wahl fiel hierbei auf Twitter, da es für viele Journalisten der wichtigste Web-Kurznachrichtendienst ist, auf welchem sie informiert bleiben, selbst ihre Meinungen kundtun und verfolgen können, was ihre Kollegen gerade beschäftigt. 
+Für die Recherchen der Beziehungsstärken zwei und drei wurden die Ergebnisse von Google und Google Scholar herangezogen: Veranstaltungshinweise, Artikel, Interviews und Arbeitsbeschreibungen gaben Aufschluss über gemeinsame Kooperationen. Da die Quellenauflistung jeder einzelnen der 1150 bestehenden Edges zu viel für diesen Forschungsbericht wäre, sind alle Edge-und Nodelistquellen auf Github vermerkt.
+
+
+# Analyse und Interpretation
+
+## Das Gesamtnetzwerk
+
+Das Gesamtnetzwerk mit 108 Knoten ist recht unübersichtlich, aus diesem Grund werden im Weiteren Teilnetzwerke aufgeschlüsselt, um weitere Schlüsse ziehen zu können. Die männlichen Knoten sind als blaue, die weiblichen als rosa kreisförmige Knoten dargestellt, die Institutionen sind als rote quadratische Knoten dargesellt. Die verschiedenen Beziehungsstärken sind durch die Stärke der Kanten sichtbar: Kollegen sind durch eine stärkere Kante verbunden als Twitter-Bekanntschaften oder gemeinsame Kollaborationen. Das Netzwerk umfasst 108 Knoten, ist ungerichtet und nach Beziehungsstärke gewichtet. Es hat 1150 Kanten. Alle folgenden Netzwerke sind ebenso ungerichtet.
+
+```{r Pakete installieren}
+library(igraph)
+library(igraphdata)
+library(knitr)
+library(rmarkdown)
+```
+
+```{r Erstellen des Igraphobjekts}
+el <- read.csv("https://raw.githubusercontent.com/franziska-anson/Pulitzer/master/EL.csv", header=T, as.is=T, sep = ",")
+
+nodes <- read.csv("https://raw.githubusercontent.com/franziska-anson/Pulitzer/master/NL.csv", header=T, as.is=T,)
+
+head(nodes)
+
+pu_matrix <- as.matrix(el)
+
+# generiert ein igraph-Objekt (dataframe) aus der Matrix, das gerichtet ist (directed = FALSE)
+pu <- graph_from_data_frame(d=pu_matrix, vertices=nodes, directed=FALSE)
+
+```
+
+``` {r Verschönerungen}
+
+
+V(pu)[V(pu)$type == 1]$shape <- "circle"
+
+V(pu)[V(pu)$type == 2]$shape <- "square"
+
+V(pu)[V(pu)$type == 1]$color <- "grey"
+
+V(pu)[V(pu)$type == 2]$color <- "red"
+
+V(pu)[V(pu)$sex == 1]$color <- "blue"
+V(pu)[V(pu)$sex == 2]$color <- "pink"
+
+V(pu)$vertex.label.color="black"
+V(pu)$label.font.family="Arial"
+E(pu)$color="black"
+E(pu)$width <- E(pu)$weight
+```
+
+```{r Gesamtnetzwerk}
+par(mar=c(0,0,0,0)) 
+
+plot(pu,
+     asp=0,
+     vertex.size=8,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108")
+#Hier werden die verwendeten Netzwerkmaße berechnet. Dichte und Pfaddistanz werden später noch einmal aufgeführt
+degree(pu)
+degree(pu, normalized = TRUE)
+mean(degree(pu))
+median(degree(pu))
+mean(degree(pu, normalized = TRUE))
+median(degree(pu, normalized = TRUE))
+largest_cliques(pu)
+gsize(pu)
+```
+
+Erkennbar sind bereits einige Journalisten wie Andie Dominick und Frank Suraci, welche eher am Rande des Netzwerks stehen und wenige Kanten haben. Schon hier zeigt sich, dass Akteure, welche keinen Twitter Account haben, tendenziell weniger Beziehungen haben und somit schlechter vernetzt sind. Diese weisen deshalb auch eine hohe Pfaddistanz auf: Es dauert länger bis Informationen sie erreichen oder von ihnen verlautete Informationen den Rest des Netzwerks erreichen.
+
+Für eine detaillierte Betrachtung wird das Degree-Maß gewählt. Dieses soll Aufschluss über die ein- und/oder ausgehenden Beziehungen durch diesen Knoten geben. Es wird angenommen, je mehr Verbindungen ein Knoten aufweist, desto wichtiger ist seine Stellung im Netzwerk (Fuhse, 2016, S.59). Zur Vergleichbarkeit wird der gemittelte Degree-Wert verwendet, um die Werte der anderen Akteure in Relation zu setzen. Andie Dominick hat eine gemittelten Degree-Wert von 0,018 und Frank Suraci von 0,028. Die Zentralitätsmaße dieser beiden beispielhaft gewählten Pulitzer-Gewinner sind also vergleichsweise niedrig. Der Mittelwert der Degree-Werte einzelner Gewinner liegt im Gesamtnetzwerk bei 0,199: Im Durschnitt hat jeder Pulitzer-Preisträger einen relativen Beliebtheitswert von 19.9% oder auch 21,31 ein- und/oder ausgehende Verbindungen. Der Median des Gesamtnetzwerkes liegt bei 17.2% oder auch 18.5 ein- und/oder ausgehende Verbindungen eines einzelnen Akteurs.
+
+Somit haben die beiden Gewinner im Vergleich zum Rest des Netzwerkes eher niedrige Zentralitätswerte. Ob es sich auch um eine Kausalität handelt, dass beide keinen Twitter Account besitzen, ist nur bedingt zu behaupten, schließlich steigt der Degreewert auch, da zur Datenerhebung explizit auch Twitter gezählt wurde und so noch mehr Beziehungen insgesamt entstehen können. Hingegen sind beide Knoten nicht im beziehungsstärkeren (weight=3) Kollegen-Netzwerk (zu finden unter 4.5) nicht integriert. Das könnte aber ebenso darauf hinweisen, dass ein Gewinn auch für Außenseiter durchaus möglich ist. Dies müsste aber in einer weitergehenden Analyse überprüft werden.
+
+Die Zahlen wurden auf drei Dezimalstellen gerundet. Verwendet wurden In- und Outdegrees zur Berechnung, da es sich bei dem Netzwerk um ein ungerichtetes Netzwerk handelt.
+„Pfaddistanz zwischen zwei Akteuren besteht aus der Anzahl der (gerichteten) Verbindungen, über die ein Akteur im Netzwerk den zweiten Akteur erreichen kann“ (Fuhse, 2016, S. 61, Herv. i. Org.). Untersucht wird nun, wie lang die Wege im Gesamtnetzwerk tatsächlich sind. Die mittlere Pfaddistanz liegt im Gesamtnetzwerk bei 1,857, also aufgerundet 2 Knoten, um von Akteur A nach Akteur B zu gelangen. Die längste Distanz beträgt jedoch wesentlich mehr: 6 Knoten zwischen den Gewinnern Andie Dominick und Maad al Zikry, beides Gewinner, die keinen Twitter Account besitzen. Informationen können in diesem Netzwerk schnell ausgetauscht werden, dennoch gibt es Einzelgänger, welche langsamer erreicht werden.
+
+Die größte Clique besteht aus 12 Akteuren: The New York Times, The Washington Post David Fahrenthold, David Barstow, Christopher Chivers, Eric Lipton, The Boston Globe, Jodi Kantor, Megan Twohey, Ronan Farrow, Farah Stockman, Emily Nussbaum. Cliquen sind als diejenigen Konstellationen zu verstehen, welche eine Beziehungsdichte von 1 aufweisen, also in welcher jeder Akteur zu jedem eine Beziehung hat (Luke 2015, S.107). Interessanterweise besteht diese Clique zu 25% aus Organisationen, welche allein durch ihre Struktur die Möglichkeit bieten, mehrere Personen zu vernetzen, da sie einen Pool an Angestellten und freien Mitarbeitern haben, den eine Einzelperson schwer erreichen kann. 
+
+Insgesamt weist das Gesamtnetzwerk eine Dichte von 19,9% auf. Dieser Wert wird für den Vergleich weiterer Teilnetzwerke relevant, die folgen. Dabei wird als Netzwerkdichte ein Wert in Prozent gemeint, der angibt, wie viele Beziehungen von allen möglichen Beziehungen im Netzwerk auch realisiert wurden (Fuhse 2016, S. 54).
+
+
+## Twitter-Netzwerk     
+Im Twitter-Netzwerk werden nur die Knoten mit einem Twitter Account angezeigt, um das Netzwerk entsprechend zu entzerren und die vorhandenen Verbindungen besser sichtbar zu machen. Das Netzwerk besteht aus 94 Knoten und 408 Kanten.
+
+```{r Twitter Netzwerk}
+# Alle, die kein Twitter haben oder keine Twitter Beziehungen, sind gelöscht. Es werden nur die Edges selektiert, die die Gewichtung 1 haben.
+pu_twitter <- subgraph.edges(pu, E(pu)[weight ==1])
+par(mar=c(0,0,0,0)) 
+
+plot(pu_twitter, 
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+     sub="n=108"
+     )
+
+pu_twitter2 <- delete.vertices(pu_twitter, degree(pu_twitter)==0)
+plot(pu_twitter2,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     vertex.label.color="black",
+          )
+degree(pu_twitter2, normalized = TRUE)
+degree(pu_twitter2)
+sum(degree(pu_twitter2))
+list(V(pu_twitter2))
+gsize(pu_twitter2)
+```
+
+Das Twitter-Netzwerk hat eine Dichte von 9.3%; im Vergleich mehr als das folgende Kollegen-Netzwerk mit einer Dichte von 7.7%. Dies könnte darauf zurückzuführen sein, dass es einfacher ist, sich auf Twitter gegenseitig zu folgen und dementsprechend die Beziehungsdichte höher ist als in einem Netzwerk, in dem nach tatsächlicher Nähe selektiert wird. Jedoch spielt auch hier die Stärke der Beziehungen eine Rolle. Die Kollegen werden untereinander stärkere Beziehungen haben als wenn sie sich lediglich über Twitter folgen. Twitter hat tendenziell eine schwächere Beziehungsstruktur: Ein Folgen auf Twitter erfordert keine weitere Interaktion. Jedoch gibt es einen Hinweis darauf, dass sich die Preisträger zumindest kennen und sich dazu entschieden haben, einem anderen Preisträger zu folgen. Die Preisträger nehmen sich also untereinander wahr. Die Preisträger suchen offenbar nacheinander und steigern so ihr Sozialkapital. Hier könnte weitere Forschung den Ansatz verfolgen, zu überprüfen, ob die Gewinner auch tatsächlich auf Twitter interagieren, also „retweeten“ oder sich unter ihren Tweets erwähnen.
+
+Doch auch Institutionen sind auf Twitter zu finden. Jede der Institutionen hat einen Twitter-Account, gerade für sie ist das Medium essentiell, hier können nicht nur Nachrichten ausgetauscht werden, sondern auch neue Artikel geteilt werden. Bekanntere und größere Institutionen wie die New York Times befinden sich zentral und haben die meisten Kanten, 24,73% aller möglichen Verbindungen sind realisiert, in absoluten Zahlen sind das 23 Beziehungen. Journalisten scheinen dagegen einen kleineren Kreis zu haben, Cara Fitzpatrick hat beispielsweise 16,12% aller möglichen Verbindungen, was 15 Verbindungen entspricht. Vereinzelt haben die Gewinner nur einen einzigen Twitter-Kontakt, erstaunlicherweise ist darunter auch eine Institution: The Arizona Republic. Besonders kleinere Institutionen haben recht wenige Kanten, hier lässt sich die Vermutung anstellen, dass diese nicht über die finanziellen Mittel verfügen, eine Person anzustellen, welche speziell Social Media und somit auch Twitter-Accounts betreut. Entwicklungen dieser Art sind nicht ungewöhnlich im Journalismus: Finanzielle Mittel werden gekürzt und so muss gespart werden, wo es sich am ehesten anbietet (vgl. Bartelt-Kircher, 2010). 
+Nicht umsonst wird Twitter als eines der wichtigsten Informations- und Nachrichtentools für Journalisten bezeichnet, auf welchem sich Journalisten auch gegenseitig folgen, um über die Aktivitäten der Anderen auf dem Laufenden zu bleiben und sich auszutauschen, weshalb es auch für Organisationen lohnenswert ist, diesen Zweig weiter zu verfolgen, auch wenn er auf den ersten Blick keinen finanziellen Nutzen hat.
+
+
+
+## Twitter Einzelgänger-Netzwerk
+
+Circa 8,3% der Journalisten besitzen keinen Twitter Account. In absoluten Zahlen sind das zehn Journalisten, welche ihre Verbindungen nur mithilfe von Kollaborationen und unter Kollegen aufrecht erhalten und knüpfen. Es gibt zwei Kanten.
+
+```{r Netzwerk Twitter-Einzelgänger}
+pu_ktw <- delete.vertices(pu, V(pu)[twitter == 1]) #Lösche alle Knoten, die Twitter haben
+par(mar=c(0,0,0,0)) 
+
+plot(pu_ktw,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=10",
+     vertex.label.color="black")
+list(V(pu_ktw))
+gsize(pu_ktw)
+```
+
+Unter diesen zehn Journalisten befindet sich nur eine einzige Frau, diese hat auch nur eine einzige Beziehung im Gesamtnetzwerk und diese zu einer Institution, der New York Times. Auch die anderen Journalisten, welche keinen Twitter-Account besitzen, haben eine geringe Anzahl an Kanten. Einzige Ausnahme sind Maad al Zikry und Kyaw Soe Oo, die 11, beziehungsweise 12 Kanten haben. Alle anderen haben die Hälfte oder weniger Kanten. Da im Gesamtnetzwerk jeder Journalist durchschnittlich 21 Kanten hat, zeigt sich sehr deutlich, dass die Journalisten, welche keinen Twitter-Account haben, deutlich schlechter vernetzt sind. Das Netzwerk scheint also für die Arbeit als Journalist ein wichtiges Tool zu sein, aber nicht unverzichtbar, wie sich zeigt. Denn schließlich haben diese 9 Journalisten auch als Außenseiter einen Pulitzer-Preis gewonnen. 
+
+Das Netzwerk zeigt nur Verbindungen zu anderen Journalisten ohne Twitter-Account und so ist sind nur zwei Kanten zu sehen: Zwischen John Hackworth und Brian Gleason und Micheal Sloan und Daniel Berehulak. Beide Paare haben zusammen gearbeitet und auch ihren Pulitzer-Preis gemeinsam gewonnen haben. John Hackworth und Brian Gleason haben wenig Kontakt zu anderen Journalisten des Netzwerks: Brian Gleason hat lediglich eine weitere Kante zur New York Times und John Hackworth hat mit 3 anderen Journalisten kollaboriert. Auffällig ist, dass beide am hinteren Ende des Altersspektrums zu finden sind (Alterskategorie 4 und 5). Hier könnte sich auch eine technische Hürde vermuten lassen. Diese ist jedoch keineswegs bei allen Journalisten ohne Twitter-Netzwerk zu vermuten, Rachel Kaadzi Ghansah ist beispielsweise im jüngeren Spektrum anzusiedeln (Alterskategorie 2).
+
+
+## Kollaborationen-Netzwerk
+Das Netzwerk der Beziehungsstärke 2 definiert die Kollaborationen, die es unter den Pulitzer-Preisträgern gab, also ob diese beispielsweise schon gemeinsame Artikel verfasst haben, im anderen Medium erwähnt, interviewt oder zitiert wurden oder als Gastautor für das jeweilige Medienhaus fungiert haben. Das Netzwerk umfasst insgesamt 102 Knoten und 487 Kanten.
+
+
+```{r Kollaborations-Netzwerk}
+pu_work <- subgraph.edges(pu, E(pu)[weight ==2])
+par(mar=c(0,0,0,0)) 
+
+degree(pu_work)
+
+plot(pu_work,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=108",
+     vertex.label.color="black")
+list(V(pu_work))
+gsize(pu_work)
+degree(pu_work)
+degree(pu_work, normalized = TRUE)
+```
+
+Auffällig ist hierbei, dass besonders einige der Institutionen wie die New York Times, der Guardian oder die Seattle Times vielfache Zusammenarbeiten mit anderen Medienhäusern oder Journalisten aufweisen können. Daraus kann man schließen, dass diese Institutionen im Austausch mit vielen der Pulitzer-Preisträger sind und Zusammenarbeiten anstreben. Vor allem die Seattle Times hat in diesem Netzwerk einen Degree-Wert von 55,44% und 56 Beziehungen zu anderen Knoten. Im Gesamtnetzwerk hat diese 60 Beziehungen und einen relativen Degree-Wert von 56,07%. Die Tageszeitung taucht bei anderen Netzwerken nicht siginifikant zu den Knoten mit den höchsten Werten der anderen Netzwerke auf. Dagegen hat die Tageszeitung schon zwölf Pulitzerpreise (Stand 2020) gewonnen. Ebenso erwähnt die Zeitung viele Artikel der Gewinner und stellt diese auf ihrer Seite ein. Dadurch, dass ein Großteil ihrer Gesamtbeziehungen aus Kollaborationen bestehen, kann vermutet werden, dass sie viele Inhalte von freien Mitarbeiter oder anderen Redaktionen beziehen und selbst einen geringeren Mitarbeiterstamm haben.
+Die Randbeziehungen werden fast ausschließlich von Journalisten wie Brian Gleason, Clare Baldwin und Inga Saffron geprägt, da diese bisher nur wenige Zusammenarbeiten mit den anderen ausgeführt haben.
+
+
+## Kollegen-Netzwerk
+Das Kollegen-Teilnetzwerk ist selektiert nach der Beziehungstärke 3. Es werden nur diejenigen Preisträger aufgelistet, die jemals in der selben Institution gearbeitet hatten und somit "Kollegen" waren. Das Netzwerk umfasst 82 Knoten und 255 Kanten.
+
+```{r Kollegen Netzwerk}
+
+#nur tatsächliche Kollegenbeziehungen werden angezeigt, Einzelgänger nicht
+pu_col <- subgraph.edges(pu, E(pu)[weight ==3])
+par(mar=c(0,0,0,0)) 
+
+
+
+plot(pu_col,
+     asp=0,
+     vertex.size=6,
+     layout=layout_with_graphopt,
+     sub="n=82",
+     vertex.label.color="black")
+list(V(pu_col))
+gsize(pu_col)
+degree(pu_col)
+```
+
+Im Netzwerk der Kollegen lassen sich verschiedene Cluster um Institutionen beobachten, wie beispielsweise die Associated Press, die Los Angeles Times und die New York Times. Besonders das Cluster um die New York Times ist sehr dicht gedrängt, hier zeigt sich vor allem auch, dass diese eine der größten Institutionen ist und somit auch einen größeren Stamm an Mitarbeitern beschäftigen kann als beispielsweise The Seattle Times, welche lediglich eine einzige Verbindung hat. 
+
+Am Rand des Netzwerks befinden sich vier Dyaden, die mit keinem anderen Knoten in Kontakt stehen. 
+
+Zu sehen ist auch, dass es einige Journalisten gibt, welche selbst nicht bei den Institutionen dieses Netzwerks gearbeitet haben, sondern lediglich mit Journalisten, die bei diesen angestellt waren. Als Beispiel sind hier Frank Suraci und Rebecca Kimitch anzuführen, die nur miteinander und mit Rob Kuznia zusammengearbeitet haben. Kuznia hat jedoch sowohl bei The Boston Globe und The Washington Post gearbeitet. Dadurch lässt sich eine gewisse Abhängigkeit der beiden vermuten, fällt die Verbindung zu Kuznia weg, sind die beiden vom restlichen Netzwerk getrennt und so ist potenziell auch der Informationsstrom unterbrochen. 
+
+Doch nicht nur Personen können als Broker innerhalb eines Netzwerkes fungieren, auch The Boston Globe fungiert als Knotenpunkt in diesem Netzwerk: Die Institution ist der Knotenpunkt zwischen den Clustern um The New York Times, The Washington Post und Reuters. Hier lässt sich deutlich erkennen, dass einige Journalisten fest bei ihrem Medium angestellt sind, wohingegen andere bereits bei mehreren Institutionen gearbeitet haben. Scheint es als würden die Institutionen nicht selbst koopieren, da sie nur über Personen verbunden sind, so muss bedacht werden, dass zwei Institutionen nicht in einem Kollegenverhältnis stehen können. Dass Koopertionen direkt zwischen den Medienhäusern bestehen, ist im Kollaborationennetzwerk ersichtlich.. Besonders auffallend ist hierbei, wie viele Verbindungen die einzelnen Journalisten haben und mit wie vielen Kollegen sie bereits zusammengearbeitet haben im Vergleich zu den wenigen Verbindungen, welche die Institutionen haben: Wenige Journalisten sind direkt bei den Medienhäusern angestellt, viele arbeiten entweder für andere Institutionen, welche nicht gelistet wurden oder als freie Journalisten. Dies zeigt auch die Dichte: 7,7% sind es im Kollegen-Netzwerk, ein weitaus geringerer Wert als im Gesamtnetzwerk, bei welchem die Dichte 19,9% beträgt.
+
+
+## Männer- und Frauen-Netzwerke
+Die Hypothese zu Beginn der Forschung war, dass sich unter den Preisträgern weniger Frauen als Männer befinden würden. Zudem sind auch in Deutschland die meisten Führungskräfte in Redaktionen männlich. Tatsächlich waren nur 26 der Gewinner weiblich, niemand divers und 59 männlich. Hier werden die entsprechenden Netzwerke visualisiert. Das Männer-Netzwerk hat 59 Knoten und 239 Kanten. Das Frauen-Netzwerk hat 26 Knoten und 74 Kanten.
+
+```{r Männer Netzwerk}
+pu_male <- pu
+pu_male <- delete_vertices(pu_male, V(pu_male)$sex==2)
+pu_male <- delete_vertices(pu_male, V(pu_male)$type==2)
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_male,
+   asp=0,
+   vertex.label.color="black",
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   sub="n=58")
+degree(pu_male)
+degree(pu_male, normalized = TRUE)
+list(V(pu_male))
+gsize(pu_male)
+```
+
+
+```{r Frauen Netzwerk}
+pu_fem <- pu
+pu_fem <- delete_vertices(pu_fem, V(pu_fem)$sex==1)
+pu_fem <- delete_vertices(pu_fem, V(pu_fem)$type==2)
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_fem,
+   asp=0,
+   vertex.size=6,
+   layout=layout_with_graphopt,
+   vertex.label.color="black",
+   sub="n=27")
+degree(pu_fem, normalized = TRUE)
+degree(pu_fem)
+betweenness(pu_fem)
+list(V(pu_fem))
+gsize(pu_fem)
+```
+
+Jedoch sind tatsächlich heute immer noch besonders die Chefetagen journalistischer Redaktionen von männlichen Kollegen dominiert (vgl. Lünenborg & Maier, 2012). Dennoch ist der Anteil an männlichen und weiblichen Journalisten insgesamt ungefähr gleich ist (vgl. Mika, 2019).
+Auch bei den Netzwerken nach Geschlechtern getrennt, gibt es fast keine Einzelgänger. Ausnahmen bei den Männern ist alleinig Hilton Als, bei den Frauen sind es Harriet Ryan und Marina Walker. Im Gegensatz zu ihnen weist beispielsweise Jodi Kantor im Frauen-Netzwerk 14 Verbindungen auf: 56% ihrer möglichen Beziehungen sind vorhanden. Jodi Kantor hat hohe Zentralitätsmaße und somit auch eine wichtige Rolle beziehungsweise ein hohes Sozialkaptial und das könnte es einfacher für sie machen Beziehungen zu knüpfen. Die Dichte im Männer-Netzwerk liegt bei 14%, wohingegen die Dichte im Frauen-Netzwerk mit 21% wesentlich höher ist: Die Pulitzer-Gewinnerinnen sind dichter miteinander vernetzt als die Pulitzer-Gewinner.
+
+Vergleicht man jedoch die beiden Personen mit dem höchsten Degree-Maß in beiden Netzwerken, macht sich ein großer Unterschied bemerkbar. Jodi Kantor hat 14 Verbindungen, doch David Fahrenthold mit dem höchsten Degree-Maß hat mehr als doppelt so viele Verbindungen: 30. Setzt man dies jedoch in Relation zur Anzahl der möglichen Verbindungen und somit der Anzahl der Personen im Netzwerk, stellt man fest, dass Jodi Kantor mit einem Degree-Wert von 56% über David Fahrenthold liegt, der einen Degree-Wert von knapp 52% hat. So hat David Fahrenthold zwar mehr Verbindungen in absoluten Zahlen, in Relation ist Jodi Kantor jedoch besser vernetzt.
+Im Bezug auf das Gesamtnetzwerk hat David Fahrenthold hingegen einen Degree-Wert von 58,87% und 63 Beziehungen und die Jodi Kantor  39,25% und 42 Beziehungen. Das heißt, dass weibliche Preisträgerinnen zwar deutlich besser vernetzt untereinander sind, jedoch in größeren Netzwerken weniger Beziehungen und damit weniger Sozialkapital als männliche Preisträger haben.
+
+Anschließend die Ego-Netzwerke beider Journalisten visualisiert. Ebenso die Aufschlüsselung, wie diese Netzwerke erstellt wurden.
+
+Zunächst wurde nach siginfikat Degree-Werten unter den Preisträgern gesucht. Bei den männlichen Preisträgern ist dies David Fahrenthold. Es hat 64 Knoten und 651 Kanten.
+```{r auf der Suche nach einem Journalisten im Gesamtnetzwerk}
+list.vertex.attributes(pu)
+ego_size(pu)
+degree(pu)
+#Am meisten Verbindungen hat der Washington Post Journalist David Fahrenthold
+
+#Nun das entsprechende Ego-Netzwerk
+
+pu_DaFa <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "David Fahrenthold", mode="all")
+pu_DaFa <- pu_DaFa[[1]]
+V(pu_DaFa)[V(pu_DaFa)$name == "David Fahrenthold"]$color <- "yellow"
+plot(pu_DaFa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     )
+list(V(pu_DaFa))
+gsize(pu_DaFa)
+```
+
+Der selbe Vorgang wurde bei den weiblichen Preisträgerinnen wiederholt. Gefunden wurden Jodi Kantor. Es hat 43 Knoten 413 Kanten.
+```{r größter und kleinster Degree bei den Frauen}
+ego_size(pu)
+degree(pu)
+
+pu_JoKa <- make_ego_graph(pu, order = 1, nodes= V(pu)$name == "Jodi Kantor", mode="all")
+pu_JoKa <- pu_JoKa[[1]]
+V(pu_JoKa)[V(pu_JoKa)$name == "Jodi Kantor"]$color <- "yellow"
+plot(pu_JoKa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     )
+list(V(pu_JoKa))
+gsize(pu_JoKa)
+```
+
+Zur besseren Vergleichbarkeit wurden die beiden Gewinner nebeneinander visualisiert.
+```{r Visualisierung David Fahrenthold und Jodi Kantor im Vergleich}
+par(mfrow=c(1,2), mar=c(0,0,0,0))
+plot(pu_JoKa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     )
+plot(pu_DaFa,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6,
+     )
+par=(mfrow=c(1,1))
+```
+
+## Ego-Netzwerke
+
+Bei der Suche nach Ego-Netzwerken wurden besonders die von New York Times und Reuters ausgehenden Beziehungen auffällig. Diese beiden Institutionen weisen die größten Vernetzungen auf: Viele der Journalisten folgen ihnen auf Twitter, haben schon mal für sie gearbeitet oder sind Angestellte (einer) der beiden Medienhäuser. Diese Erkenntnisse sind kaum verwunderlich; immerhin gehören die Institutionen zu den größten, bekanntesten und renommiertesten Redaktionen der Welt. 
+
+Das Ego-Netzwerk der New York Times weist 87 Knoten und 895 Kanten auf.
+```{r Ego Netzwerk New York Times}
+#Es wird nur der Node mit der exakten ID New York Times selektiert und mit dem Befehl wird ein Ego-Netzwer der ersten Ordnung gebildet.
+pu_nyt <- make_ego_graph(pu, order = 1, nodes= V(pu)$name=="New York Times", mode="all")
+pu_nyt <- pu_nyt[[1]]
+
+par(mar=c(0,0,0,0)) 
+
+plot(pu_nyt,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+#Auflistung der Edges und der Nodes im Netzwerk
+list(V(pu_nyt))
+gsize(pu_nyt)
+```
+
+Das Reuters Netzwerk weist 32 Knoten und 182 Kanten auf.
+```{r Ego-Netzwerk Reuters}
+#Das selbe Vorgehen wie bei der New York times nur dieses Mal ein Ego-Netzwerk der ersten Ordnung für Reuters
+pu_re <- make_ego_graph(pu, order = 1, nodes= V(pu)$name=="Reuters", mode="all")
+pu_re <- pu_re[[1]]
+par(mar=c(0,0,0,0)) 
+
+plot(pu_re,
+     asp=0,
+     vertex.label.color="black",
+     vertex.size=6
+     )
+list(V(pu_re))
+gsize(pu_re)
+
+```
+
+Beide Netzwerke sind deutlich dichter als das Gesamtnetzwerk mit 19,9%. Das Ego-Netzwerk der New York Times hat eine Dichte von 36,69% und und ist somit fast doppelt so gut vernetzt wie das Gesamtnetzwerk. Die Werte von Reuters sind nicht ganz so hoch, trotzdem ist auch Reuters überdurchschnittlich gut vernetzt, die Dichte in diesem Ego-Netzwerk liegt bei 23,94%. 
+Ebenso wenig erstaunlich ist es, dass New York Times und Reuters besonders viele Verbindungen zu Journalisten aufweisen, die allgemein über größere Beziehungsnetzwerke, also über enormes Sozialkapital verfügen: Dazu gehören beispielsweise Journalisten wie Jodi Kantor, Megan Twoney und David Barstow. Daraus lässt sich schließen, dass ein bereits vorhandenes, solides Sozialkapital und viele Verbindungen zu anderen Journalisten in der Regel eine Voraussetzungen dafür sind, um mit einer größeren Wahrscheinlichkeit in einem großen, bekannten Medienunternehmen zu arbeiten. Umgekehrt erhöhen sich durch die Zusammenarbeit mit sozial starken Journalisten auch die Gewinnchancen der Institution. Es ist anzunehmen, dass diese vor einer Zusammenarbeit oder einem Angestelltenverhältnis nicht nur die bisherigen Arbeiten und Erfolge der infrage kommenden Journalisten recherchieren, sondern auch deren Beziehungen und Sozialkapital. Als Beispiel lässt sich hier Chris Hamby anführen, der nach seinem Pulitzer-Gewinn im Jahr 2014 zur New York Times wechselte. 
+
+Ebenfalls herausragend sind in beiden Ego-Netzwerken die vielfachen Beziehungen zu anderen Medienhäusern wie der Washington Post, Los Angeles Times und dem Guardian US. Dies verdeutlicht, dass zwischen diesen weltweit berühmten Medienhäusern eine Vielzahl an Kooperationen und an Austausch stattfinden. Beispielsweise werden hierbei Artikel der einen Institution von der anderen geteilt, man zitiert sich gegenseitig oder startet sogar gemeinsame Projekte. 
+
+## Mehrfachpreisträger-Netzwerk
+
+Bei der Betrachtung Pulitzer-Preisträger in den Jahren von 2014 und 2019 konnte man bereits erkennen, dass einige der Namen mehrfach in der List zu finden waren. In den begutachteten Jahren wurden 3 Institute und 3 Personen mehrfach ausgezeichnet. Das Institut Reuters und die Washington Post bekamen in dieser Zeit eine Zahl von 3 Pulitzer-Preisen. Die New York Times, wie auch die Personen Daniel Berehulak, Andrew R. C. Marshall und Tyler Hicks wurden zwei Mal ausgezeichnet. 
+Das Netzwerk hat 6 Knoten und 9 Kanten.
+
+```{r Mehrfachpreisträger}
+#Alle Gewinner, die nur einen Preis gewonnen hatte, werden gelöscht
+pu_pu <- delete.vertices(pu, V(pu)[prices == 1])
+
+
+plot(pu_pu,
+     vertex.label.color="black",
+     vertex.size=12,
+     main="Mehrfachpreisträger")
+list(V(pu_pu))
+gsize(pu_pu)
+```
+
+Auffällig ist, dass alle Personen, die mehrfachen Preisträger des Pulitzer-Preises waren mehr als eine Verbindung zu den Instituten haben. Man könnte daraus schließen, dass mindestens ein Medium einen Artikel über die jeweilige Person geschrieben hat und eine stärkere Beziehung zu dem Institut besteht für welches sie hauptsächlich arbeiten. Zudem folgen sich die genannten Institute gegenseitig auf Twitter, weshalb eine grundsätzliche Verbindung besteht. Dennoch haben die drei Einzelpersonen noch nicht miteinander gearbeitet oder auch nur einen Kontakt über Twitter. Sehr zentral ist hier die Position der New York Times. Sie hat mit allen Knoten des Netzwerks Kontakt und mit Ausnahme von Andrew R. C. Marshall geht dieser Kontakt auch über eine Twitter-Verbindung hinaus, sondern resultierte in einer Kollaboration oder einem Arbeitsverhältnis.
+
+Zur Ergänzung der Code für die Netzwerkdichten Pfaddistanzen.
+```{r Dichte, Pfaddistanz und Durchmesser}
+edge_density(pu)
+edge_density(pu_twitter)
+edge_density(pu_col)
+edge_density(pu_male)
+edge_density(pu_fem)
+edge_density(pu_ktw)
+edge_density(pu_pu)
+edge_density(pu_re)
+edge_density(pu_nyt)
+edge_density(pu_DaFa)
+edge_density(pu_JoKa)
+
+diameter(pu, weights = NA)
+farthest_vertices(pu)
+mean_distance(pu)
+
+#und so weiter für jedes Netzwerk
+diameter(pu_twitter, weights = NA)
+farthest_vertices(pu_twitter)
+mean_distance(pu_twitter)
+
+diameter(pu_col, weights = NA)
+farthest_vertices(pu_col)
+mean_distance(pu_col)
+
+diameter(pu_male, weights = NA)
+farthest_vertices(pu_male)
+mean_distance(pu_male)
+
+diameter(pu_fem, weights = NA)
+farthest_vertices(pu_fem)
+mean_distance(pu_fem)
+
+diameter(pu_pu, weights = NA)
+farthest_vertices(pu_pu)
+mean_distance(pu_pu)
+
+diameter(pu_re, weights = NA)
+farthest_vertices(pu_re)
+mean_distance(pu_re)
+
+diameter(pu_nyt, weights = NA)
+farthest_vertices(pu_nyt)
+mean_distance(pu_nyt)
+
+diameter(pu_DaFa, weights = NA)
+farthest_vertices(pu_DaFa)
+mean_distance(pu_DaFa)
+
+diameter(pu_JoKa, weights = NA)
+farthest_vertices(pu_JoKa)
+mean_distance(pu_JoKa)
+
+```
+
+## Typischer Pulitzer-Gewinner
+
+Im Laufe der Datenerhebung und der verbundenen Untersuchung dieser, fiel bereits auf, dass wesentlich mehr männliche Kandidaten den Pulitzer-Preis gewinnen. Diese ersten Auffälligkeiten konnten durch die Berechnung der erhobenen Daten einzelner Attribute belegt werden. So ergab sich für die untersuchten Jahre bei den Geschlechtern der Pulitzer-Preisträger ein Prozentwert von über 75% an männlichen Gewinner des Pulitzer-Preises und nur 25% weibliche. Die Berechnung erschließt sich aus der Zuordnung der Vorgaben des Codebuches, wobei die Zahl 1 für das männliche, die Zahl 2 für das weibliche und 3 für diverse Geschlechter steht. Die Kandidaten, welche in diesen Jahren bereits mehrfach den Preis erhalten haben, wurden entsprechend häufig berechnet. Das Ergebnis der prozentualen Berechnung der Pulitzer-Preis-Gewinner, war schlussendlich nicht nur eine erste Vorahnung, sondern wurde damit bestätigt. 
+
+Des Weiteren ist das Alter der Pulitzer-Preisträger auffällig, circa 60% dieser liegt in der Altersspanne zwischen 40 und 59 Jahren, etwa 24% sind im Alter zwischen 30 und 39 Jahren, das Schlusslicht liegt bei den Journalisten unter 30 mit nur einer Person in den untersuchten Jahren. Zwar liegt der Altersschnitt von über 60 Jahren nur knapp unter 14%, dennoch ist dies im Verhältnis zur Gruppe unter 30 Jahren ein recht großer Anteil. 
+
+Ein weiterer Punkt ist die Ausbildung der Gewinner. Nicht alle Gewinner haben ein Studium im entsprechenden Bereich abgeschlossen. Etwa 48% haben ein Studium im Bereich Journalismus, Sprachwissenschaften beziehungsweise Literatur abgeschlossen. Etwa 6% studierten Politik, circa 11% Geschichte, allerdings studierten ein Drittel der Gesamten Gruppe keiner der genannten Studiengänge. Es zeigt sich, dass es durchaus möglich ist ohne Studium in einer entsprechenden Richtung zum Journalismus zu wechseln und Erfolg zu haben.
+
+In Anbetracht dessen, dass der Pulitzer-Preis ein amerikanischer Journalisten-Preis ist, kann vermutet werden, dass die überwiegenden Gewinner amerikanischer Abstammung sind. Mit einem Prozentanteil von 82% kann man dies ebenfalls nachvollziehen, nur etwa 6% sind deutscher Nationalität. Der Restanteil von etwa 12% der Gewinner ist weder amerikanischer, noch deutscher Abstammung.
+
+Bei Betrachtung des sozialen Netzwerks Twitter kann man ebenfalls eindeutig erkennen, dass die meisten Preisträger dieses aktiv nutzen. Über 90% der Kandidaten nutzen das Netzwerk, um Kontakte zu knüpfen, zu pflegen und ihrer journalistischen Tätigkeit nachzugehen.
+Grundsätzlich ist einer Erforschung des typischen Pulitzer-Preisträgers detaillierter möglich, je mehr Attribute verwendet werden. In dieser Forschung wurden 7 Attribute der Gewinner erhoben, um somit eine Prognose des Preisträgers zu erstellen. Der “typischen Pulitzer-Preisträger” ist männlich, Amerikaner und im Alter zwischen 50 und 59 Jahren. Er hat ein abgeschlossenes Studium im Bereich Journalismus oder Sprachwissenschaften und ist ebenfalls aktiv auf Twitter. 
+Filtert man die Kandidaten nach diesem Profil, ergeben sich eine  Anzahl von insgesamt 7 Pulitzer-Preisträgern: David Barstow, Russ Beuttner, Gerard Ryle, Christopher Chivers, Art Cullen, John Archibald und Ken Armstrong. Dies sind jedoch nur knapp 6,5% der Gesamtanzahl der Gewinner. Auch wenn dies das häufigste Profil ist, entsprechen auch viele der Gewinner ihm nicht. 
+
+
+
+# Diskussion, Fazit und Diskussion
+
+## Fazit und Diskussion
+Zusammenfassend lässt sich eine Korrelation zwischen den sozialen Netzwerken der Journalisten und Institutionen und deren Erfolg, welcher mit den Pulitzer-Preisen operationalisiert wurde, sehen. Welche der beiden Faktoren jedoch den anderen bedingt, lässt sich nicht sagen. Eine Kausalität kann mit dieser Forschung nicht belegt werden, lediglich eine Korrelation kann festgestellt werden. Es ist sowohl möglich, dass gut vernetzte Journalisten aufgrund ihrer Beziehungen bessere Geschichten und mehr Datenzugang haben und dadurch qualitativ bessere Arbeit leisten können, als auch, dass durch die besseren Beziehungen im weiteren Kreis auch die Preisrichter zu finden sind, welche für dieses Projekt nicht untersucht wurden. Jedoch wäre es auch möglich, dass mit dem steigenden Erfolg Beziehungen aufgebaut werden und sich erweitern. Eine dementsprechende Kausalität zu erforschen, wäre ein weiterer interessanter Schritt, der den Aufwand dieses Projektes jedoch bei Weitem übersteigt und deshalb nicht möglich war. 
+
+Auffällig und zentral ist auch das Medium Twitter, dessen Bedeutung unter Journalisten ganz klar herausgestellt werden kann und auch in dieser Forschung belegt wird: Über Twitter lassen sich Beziehungen nicht nur knüpfen, sondern auch pflegen und Journalisten, welche dieses Medium nicht nutzen, zeigen in dieser Forschung auch anderweitig schwache soziale Netzwerke. Hier bestünde die Möglichkeit weitergehend zu erforschen, ob deren soziale Netzwerke wirklich schlechter sind oder sie schlichtweg auf andere Art vernetzt sind, die in dieser Forschung nicht berücksichtigt werden konnte. Möglicherweise sind insbesondere Fotografen nicht gut mit anderen Journalisten und Pulitzer-Gewinnern vernetzt, haben aber im Bereich der Fotografie viele Kontakte. 
+
+Zudem bestätigte sich die Hypothese, dass vor allem amerikanische Journalisten und Institutionen den Preis gewinnen. Ob dies durch eine größere Präsenz oder einen vorherrschenden bias bedingt ist, lässt sich jedoch mit diesen Daten nicht feststellen. Interessant wäre es hierbei, die Preisrichter genauer zu untersuchen und ob Verknüpfungen zwischen diesen und den Gewinnern bestehen. Diese müssten nicht notwendigerweise aus direkten Bekanntschaften bestehen, sondern könnten auch ausgelöst sein durch eine Art gemeinsames Zugehörigkeitsgefühl einer bestimmten Gruppe mit gewissen Attributen. 
+
+## Limitationen
+
+Da der Fokus bei dieser Forschung vor allem auf der Vollständigkeit lag und somit die Beziehungen der Gewinner eines ganzen Lebens abzubilden, entstanden einige Einschränkungen, die bei der Auswertung dieser Ergebnisse beachtet werden müssen. Zum Einen sind hierbei nur Beziehungen der Pulitzer-Gewinner untereinander aufgezeigt. Es besteht die Möglichkeit, dass ein Akteur, welcher in den obigen Netzwerken wenige Verbindungen hat und nicht sehr gut vernetzt ist, in anderen Bereichen sehr gut vernetzt ist. Die gezeigten Verbindungen in diesen Netzwerken beziehen sich nur auf die Gewinner. Zum Anderen sind auf Grund des Workloads nur sechs Jahre der Pulitzer-Geschichte belichtet, da sich dies am besten aufteilen ließen. Für einen umfassenderen Überblick wäre es notwendig, weitere Jahre zu erheben und weitere Rückschlüsse zu ziehen. Hierbei wäre es auch möglich, eine Entwicklung sichtbar zu machen. Da der Pulitzer-Preis seit 1917 verliehen wird, wäre es möglich nicht nur nach spezifischen Gewinnern zu forschen und deren möglichen Attributen, sondern auch, inwiefern verschiedene weltbewegende Ereignisse Einfluss auf diesen Preis hatten, zum Beispiel der zweite Weltkrieg. Auch ist anzunehmen, dass verschiedene Gesetzgebungen und Protestbewegungen Einfluss auf den Preis hatten, zum Beispiel die Emanzipationsbewegung oder die Rassenunruhen in den 1960er Jahren. 
+
+Weiterhin wäre eine Analyse möglich, ob und inwiefern der Gewinn eine Pulitzer-Preises den Gewinnern im Verlauf ihrer Karriere half und ob sich signifikante Veränderungen für sie ergaben, wie beispielsweise ein höheres Gehalt oder eine höhere Position innerhalb einer Organisation. Ebenso sind nur die Anzahl der Preise gelistet und nicht, für welche Kategorie der Preis gewonnen wurde. Hierbei sind verschiedene Unterscheidungen zu sehen, da auch Fotografen den Preis gewonnen haben, welche nicht notwendigerweise Journalisten sein müssen. 
+
+Des Weiteren sind in einem two-mode Netzwerk nicht nur Journalisten zu finden, sondern auch Institutionen. Eine weitere Möglichkeit wäre gewesen, anstatt einer Institution jede einzelne Person zu listen und deren Beziehungen zu erforschen. Dies hätte jedoch den Workload weit überschritten, da teils nicht eine, sondern bis zu zehn Publikationen den Preis gewonnen haben und an jeder Publikation zwischen 3 und 20 Personen beteiligt waren. Hierbei sind vermutlich auch Personen gelistet, die nur einen geringen Beitrag zur Publikation und somit dem Preis geliefert haben. Aus diesem Grund fiel die Wahl auf ein two-mode-Netzwerk. 
+
+Weiterhin könnte man hinzufügen für welche Redaktion die Journalisten zum Zeitpunkt ihres Preises gearbeitet haben, denn nicht alle Gewinner sind freie Journalisten. Denn indirekt gewinnt die Institution den Preis auch, wenn einer der für sie arbeitenden Journalisten gewinnt, trotzdem werden sie in der oben genannten Forschung nicht erwähnt. Dies erlaubt eine mögliche Verzerrung, doch die Entscheidung fiel basierend auf den Einschätzungen der Preisrichter, welche sich entschieden den Preis entweder der Organisation oder einer Zahl an bestimmten Personen zu verleihen.
+
+ 
+# Reflexion
+
+## Lessons Learned
+
+In diesem Projekt haben wir unser eigenes Forschungsdesign und eine Forschungsfrage entwickelt. Dazu haben wir Daten selbstständig erhoben und bereinigt. Schlussendlich haben wir eine Antwort auf die Forschungsfrage gefunden und diese im Forschungsbericht festgehalten. Wir haben im Modul 226305 Netzwerke gelernt, soziale Netzwerke mit der Software R in RStudio zu visualisieren. Außerdem ist uns nun bewusst, wie man die Strukturen und Eigenschaften solcher Netzwerke interpretieren kann. Die Teamarbeit spielt hierbei eine zentrale Rolle, da man ohne eine sinnvolle Arbeitsteilung deutlich mehr Zeit für ein solches Netzwerkprojekt einplanen muss. Allein bei der Datenerhebung haben wir dadurch eine Menge Zeit gespart. Jedes Gruppenmitglied hat in diesem Projekt rund 40 Stunden für die Datenerhebung investiert. Alleine wäre es ein Arbeitsaufwand von knapp 240 Zeitstunden gewesen. Um die gesamte Datenerhebung transparent und übersichtlich zu gestalten, empfehlen wir, den Fortschritt und die Ergebnisse über Google Sheets und Google Dokumente festzuhalten. So konnten wir sehen, auf welchem Stand sich das Projekt befindet und wie viele Workloads noch investiert werden müssen. Natürlich sollte man genügend Zeit für die Datenbereinigung einplanen. In dieser Hinsicht wollen wir nochmal den Pretest positiv hervorheben, bei welchem einige Fehler zutage traten. Daraus haben wir gelernt und grobe Fehler im weiteren Verlauf vermieden. Bei der Gesamtdatenerhebung sind uns trotz der riesigen Datenmenge nur wenige Fehler aufgefallen.
+
+Kommenden Netzwerk-Kursen empfehlen wir, eine klare Kommunikationslinie zu fahren, Aufgaben von Anfang an zu verteilen und Deadlines zu setzen. Für die Fehlersuche können wir die Filterfunktionen von Google Sheets/Excel nahe legen. Dadurch haben wir in kurzer Zeit alle ID-Dopplungen herausfinden können. Leerzeichenfehler können auch immer wieder passieren. Diese findet man relativ schnell über die RAW-Datei in Github. Fehler wurden uns hierbei in Form von Gänsefüßchen (“) angezeigt und konnten dann einfach in der csv-Datei gelöscht werden. Man sollte sich in diesem Kurs nicht von Fehlern entmutigen lassen und das Projekt mit Motivation angehen. Die Methode der Netzwerkanalyse etabliert sich zunehmend im Datenjournalismus. Renommierte Medien wie die Süddeutsche Zeitung nutzen die Methode für Projekte und Datenvisualisierungen. Dass wir in unseren eigenen Projekten mit R beziehungsweise RStudio gearbeitet haben, kann bei einer späteren Bewerbung ein großer Vorteil sein. Jeder kann R lernen!
+
+## Teamreflexion 
+
+Ohne die ausgezeichnete Teamarbeit und das Verteilen der Workflows auf einzelne Personen wäre unser Projekt im Modul 226305 Netzwerke nicht realisierbar gewesen. Wir hatten eine aufwendige Recherche-Arbeit und mussten insgesamt 5810 potenzielle Edgelist-Beziehungen untersuchen. Das wäre ohne unsere sinnvolle Aufgabenverteilung nicht zu stemmen gewesen - vor allem in Hinblick auf den eng getakteten Zeitplan und der kurzen Pause zwischen Winter- und Sommersemester. Wir haben uns immer klare Fristen und Deadlines gesetzt, die vorbildlich eingehalten wurden.
+
+Regelmäßig erinnerten wir uns an Fristen über unsere Gruppe im Messenger-Dienst Whatsapp. Darüber lief der Großteil unserer internen Kommunikation. Außerdem haben wir über Whatsapp aktuelle Probleme bei der Datenerfassung benannt und uns gegenseitig Tipps gegeben. Diese haben wir in einem Google-Docs Dokument festgehalten. Auch der Zeitplan wurde in diesem Dokument festgehalten und geupdatet. Wichtige Vorarbeiten wie das Mission-Statement waren transparent für das gesamte Team zugänglich. Trotz der großen Datenmenge gab es kaum Fehler, da das Team überwiegend sauber gearbeitet hat. Die wenigen Fehler haben wir beim Pretest gefunden, den jedes Teammitglied individuell für sein Jahr vorbereitet und in RStudio visualisiert hat. Für den Pretest haben wir uns in der Hochschule der Medien in Stuttgart getroffen und gemeinsam Rücksprache gehalten. Die häufigsten Fehlerquellen waren ID-Dopplungen in der Nodelist und Leerzeichenfehler in der Edgelist. Diese Datenbereinigungen haben uns ein paar Stunden gekostet, konnten aber in Ruhe und ohne große Aufregung behoben werden. Wir sahen in der Datenerhebung eine große Schwierigkeit, waren am Ende aber sehr überrascht, dass die Visualisierungen nach der Gesamtdatenerhebung direkt funktioniert haben. Eine wichtige Hilfe waren die Coachings mit unserem Professor Swaran Sandhu, der uns über die Zeitslots hinaus wichtigen Input gab. Dazu gehört zum Beispiel die Erstellung unserer Forschungsfrage. Einige Fragen hat er uns zudem in Vorlesungen, via E-Mail oder im Etherpad Lite der e-learning Plattform moodle beantwortet. Der Großteil unseres Projekts wurde in den Semesterferien zwischen dem Wintersemester 2019/20 und dem Sommersemester 2020 fertiggestellt, da die Datenerhebung bis zu den Blockterminen im März finalisiert werden musste. Durch die Corona-Pandemie mussten die Blocktermine abgebrochen werden. Das Projekt kam für einige Wochen ins Stocken. Dennoch haben wir das Projekt fortführen können und die Datensätze mit RStudio visualisiert. Das Team hat sich nicht aus der Ruhe bringen lassen und aus den Treffen in der Hochschule der Medien wurden wöchentliche Meetings über die Plattformen Zoom und Skype. Außerdem konnten wir uns über Alfaview von Professor Swaran Sandhu beraten lassen.
+
+Zusammenfassend können wir sagen, dass das Projekt durch die saubere Teamarbeit und das Einhalten der Fristen sehr gut durch die beiden Semester verlief. Wir hatten deutlich mehr Zeit für die Datenbereinigung eingeplant. Diese Zeit konnten wir am Ende für weitere Visualisierungen und Interpretationen nutzen. Auch eine Pandemie konnte das Projekt nicht stoppen. Wir sind stolz auf unser Endergebnis und sehr zufrieden, dass wir alle Fristen problemlos einhalten konnten.
+
+## Teammitglieder
+
+An diesem Projekt haben folgende Studierende der Hochschule der Medien in Stuttgart mitgewirkt:
+
+-Franziska Anson
+
+-Maria Fischer
+
+-Eva-Maria Schauer
+
+-Ingrid Bonfert
+
+-Jan Probst
+
+-Nico Ditter
+
+Die genaue Aufgabenverteilung und Workloads sind auf Github in dem Dokument “Aufteilung der Aufgaben” hinterlegt.
+
+
+# Anlage
+## Literatur
+
+Bartelt-Kircher, G. (2010). Krise der Printmedien: Eine Krise des Journalismus? Walter de Gruyter.
+       
+Bourdieu, Pierre (1983). Ökonomisches Kapital – Kulturelles Kapital – Soziales Kapital. In: Reinhard Kreckel (Hrsg.): Soziale Ungleichheiten. Göttingen, S. 183–198.
+       
+Fuhse, J. A. (2016). Soziale Netzwerke: Konzepte und Forschungsmethoden. Konstanz u. München: UVK Verlagsgesellschaft
+      
+Luke, D. A. (2015). „Subgroups“. S. 105–23 in A User’s Guide to Network Analysis in R, Use R!, herausgegeben von D. Luke. Cham: Springer International Publishing.
+
+Lünenborg, M., & Maier, T. (2012). „Wir bemühen uns, die Gesellschaft adäquat abzubilden.“ Geschlechterkonstruktionen durch den Journalismus. In M. Lünenborg & J. Röser (Hrsg.), Ungleich mächtig. transcript Verlag. https://doi.org/10.14361/transcript.9783839416921.173
+       
+Putnam, R. D. (1993). Making Democracy Work. Civic Traditions in Modern Italy. Princeton University Press,.
+
+Volz, Y. Z., & Lee, F. L. (2013). Who wins the Pulitzer Prize in international reporting? Cumulative advantage and social stratification in journalism. Journalism: Theory, Practice & Criticism, 14(5), 587–605. https://doi.org/10.1177/1464884912455905
+
+## Github-Links
+
+[Githubverzeichnis](https://github.com/franziska-anson/Pulitzer)
+
+### Codebuch
+[Codebuch](https://github.com/franziska-anson/Pulitzer/blob/master/Codebuch.md)
+
+```{r Übersicht Netzwerkattribute}
+list.vertex.attributes(pu)
+# vertex.attributes(pu)
+list.edge.attributes(pu)
+# edge.attributes(pu)
+```
+
+
+
+### Datenmaterial und Skript
+[Datensatz](https://github.com/franziska-anson/Pulitzer)
+
+
+
+
+
